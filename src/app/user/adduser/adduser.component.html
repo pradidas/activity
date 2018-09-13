@@ -1,0 +1,74 @@
+<app-top></app-top>
+<app-sidebar></app-sidebar>
+
+<div class="content-wrapper">
+    <div class="page-title">
+      <div>
+        <h1><i class="fa fa-edit"></i> Add User</h1>
+        
+      </div>
+      <div>
+        <ul class="breadcrumb">
+          <li><i class="fa fa-home fa-lg"></i></li>
+          <li>Forms</li>
+          <li><a href="#">Add User</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <h3 class="card-title">User Registration</h3>
+          <div class="card-body">
+            <form #adduserForm="ngForm" (ngSubmit)="onSubmit(adduserForm)">
+              <div class="form-group">
+                <label class="control-label">Name</label>
+                <input class="form-control" name="name" #name="ngModel" ngModel type="text" placeholder="Enter full name">
+              </div>
+              
+              <div class="form-group">
+                <label class="control-label">Email</label>
+                <input class="form-control" name="email" #email="ngModel" ngModel type="email" placeholder="example@example.com">
+              </div>
+              <!--<div class="form-group">
+                <label class="control-label">Gender</label>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="gender">Male
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="gender">Female
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label">Identity Proof</label>
+                <input class="form-control" type="file">
+              </div>-->
+              <div class="form-group">
+                  <label class="control-label">Emp Id</label>
+                  <input class="form-control" name="empid" #empid="ngModel" ngModel type="text" placeholder="Enter Emp Id">
+                </div>
+              <div class="form-group">
+                  <label class="control-label">User Name</label>
+                  <input class="form-control" name="uname" #uname="ngModel" ngModel type="text" placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Password</label>
+                    <input class="form-control" name="pass" #pass="ngModel" ngModel type="password" placeholder="Enter full name">
+                  </div>
+                  <div class="card-footer">
+                      <button class="btn btn-primary icon-btn" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Register</button>&nbsp;&nbsp;&nbsp;
+                      <a class="btn btn-default icon-btn" [routerLink]="['/user-list']"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a>
+                    </div>  
+              
+            </form>
+          </div>
+         
+        </div>
+      </div>
+      <div class="clearix"></div>
+    </div>
+  </div>

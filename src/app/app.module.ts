@@ -10,6 +10,7 @@ import { TopComponent } from './top/top.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { UserserviceService } from './user/shared/userservice.service';
 import { LoginComponent } from './login/login.component';
+import { AdduserComponent } from './user/adduser/adduser.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LoginComponent } from './login/login.component';
     UserComponent,
     TopComponent,
     SidebarComponent,
-    LoginComponent
+    LoginComponent,
+    AdduserComponent
   ],
   imports: [
     BrowserModule,

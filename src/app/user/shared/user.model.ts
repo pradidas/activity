@@ -1,7 +1,9 @@
 export class Employee {
   id: number;
   name:string;
-  address:string;
-  phone:number;
+  email:string;
+  empid:number;
+  uname:string;
+  pass:number;
     
 }

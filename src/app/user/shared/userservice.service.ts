@@ -9,6 +9,8 @@ import { Log } from './log.model';
 
 @Injectable()
 export class UserserviceService {
+  message:string;
+
 selectedEmployee : Employee;
 employeeList : Employee[];
 selectedLog : Log;
@@ -34,5 +36,14 @@ logList : Log[];
     return this.http.post('http://localhost:5000/login',body,requestOptions).map(x => x.json());
   }
 
+  addUser(user : Employee){
+    var body = JSON.stringify(user);
+    //console.log(body);
+    var headerOptions = new Headers({'Content-Type':'application/json'});
+    var requestOptions = new RequestOptions({method : RequestMethod.Post,headers : headerOptions});
+    return this.http.post('http://localhost:5000/employees',body,requestOptions).map(x => x.json());
+  
+
+  }
 
 }
