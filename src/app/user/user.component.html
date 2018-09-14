@@ -17,22 +17,23 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-body">
+                <p style="color:green"><b>{{msg}}</b></p>
                 <table class="table table-hover table-bordered" id="sampleTable">
                   <thead>
                     <tr>
                       <th>Name</th>
+                      <th>Email Id</th>
                       <th>Emp ID</th>
-                      <th>Contact Number</th>
-                      <th>   Action   </th>
+                       <th>  Action   </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr *ngFor="let user of userService.employeeList">
                       <td>{{user.name}} </td>
-                      <td>{{user.address}} </td>
-                      <td>{{user.phone}}</td>
+                      <td>{{user.email}} </td>
+                      <td>{{user.empid}}</td>
                       <td>
-                          <i class="fa fa-edit"></i> <a href=""> Edit</a> | <i class="fa fa-trash"></i> <a href=""> Delete</a> 
+                          <i class="fa fa-edit"></i> <a href=""> Edit</a> | <i class="fa fa-trash"></i> <a  (click)="onDelete(user.id)" style="cursor:pointer;"> Delete</a> 
                         
                          </td>
                       </tr>

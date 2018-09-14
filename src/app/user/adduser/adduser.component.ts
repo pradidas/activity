@@ -23,13 +23,14 @@ export class AdduserComponent implements OnInit {
    
     if (form.value.uname != '') {
      
-     this.userService.logInauth(form.value)
+     this.userService.addUser(form.value)
        .subscribe(data => {
        
          
 
           //this.resetForm(form);
-         // this.userService.getEmployeeList();
+         this.userService.getEmployeeList();
+         this.route.navigate(['/user-list']);
           //this.toastr.success('New Record Added Succcessfully', 'Employee Register');
 
         })

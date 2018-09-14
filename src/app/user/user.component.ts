@@ -13,10 +13,26 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 export class UserComponent implements OnInit {
 
   constructor(private userService: UserserviceService) { }
-
+    msg : string;
   ngOnInit() {
     this.userService.getEmployeeList();
   // console.log('u');
   }
+
+  onDelete(id: number) {
+    if (confirm('Are you sure to delete this record ?') == true) {
+      this.userService.deleteUser(id)
+      .subscribe(x => {
+        //console.log(x.affectedRows);
+        if(x.affectedRows>=1){
+          this.msg = "Record Successfully deleted";
+        }
+        this.userService.getEmployeeList();
+        //this.toastr.warning("Deleted Successfully","Employee Register");
+      })
+    }
+  }
+
+
 
 }
